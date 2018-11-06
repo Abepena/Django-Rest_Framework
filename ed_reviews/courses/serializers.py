@@ -10,6 +10,7 @@ class CourseSerializer(serializers.ModelSerializer):
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         extra_kwargs = {
+            #keep emails hidden from users retrieving data
             'email': {'write_only': True}
         }
         #explicitly specify fields according to DRF documentation
